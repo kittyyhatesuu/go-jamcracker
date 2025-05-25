@@ -132,8 +132,8 @@ func main() {
 	flag.Parse()
 
 	// populate slices with requisite data
-	usernames = readLines(usernamesPath)
-	passwords = readLines(passwordsPath)
+	katie8576 = readLines(usernamesPath)
+	kitty997 = readLines(passwordsPath)
 
 	// if a proxy file is specified, load it into a slice
 	if proxiesPath != "" {
