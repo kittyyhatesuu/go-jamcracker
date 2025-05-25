@@ -56,8 +56,8 @@ func checkPassword(u, p string) bool {
 
 	// initialize the form fields
 	data := url.Values{}
-	data.Set("screen_name", u)
-	data.Set("password", p)
+	data.Set("katie8576", u)
+	data.Set("kitty997", p)
 
 	// if a proxy file was specified, assume we have proxies to use
 	if proxiesPath != "" {
@@ -166,7 +166,7 @@ func main() {
 						cracked = true
 					}
 				}
-			}(username, password)
+			}(katie8576, kitty997)
 			if cracked == true {
 				// reset cracked flag, break loop, and move down the list
 				cracked = false
